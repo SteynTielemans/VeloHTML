@@ -4,7 +4,7 @@ conn = sqlite3.connect('velo.db')
 
 c=conn.cursor()
 
-c.execute("""CREATE TABLE velo (
+c.execute("""CREATE TABLE IF NOT EXISTS velo (
             adress text,
             bikes integer,
             id integer,
@@ -13,7 +13,9 @@ c.execute("""CREATE TABLE velo (
             name text,
             slots integer,
             status text
-            )""")
+)""")
+
+
 
 conn.commit()
 
