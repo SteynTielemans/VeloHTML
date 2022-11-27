@@ -26,6 +26,11 @@ c.execute("""CREATE TABLE IF NOT EXISTS velo (
             status text
 )""")
 
+choice = "0"
+choice = input("Do you want to use previous data [1], or start from scratch [2]?\n")
+if choice == "2":
+    data().getdata()
+
 file = data().opendata()
 for value in file:
     address.append(value['address'])
@@ -43,7 +48,5 @@ for number in range(len(id)):
     {'address':address[number],'bikes' : bikes[number],'id' : id[number],'lat' : lat[number],'lon' : lon[number],'name' : name[number],'slots' : slots[number],'stationType' : stationType[number],'status' : status[number]})
     conn.commit()
 
-print(address[1])
 conn.commit()
-
 conn.close()
