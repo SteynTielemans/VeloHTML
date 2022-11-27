@@ -14,6 +14,7 @@ slots =[]
 stationType = []
 status =[]
 
+
 c.execute("""CREATE TABLE IF NOT EXISTS velo (
             adress text,
             bikes integer,
