@@ -49,5 +49,24 @@ for number in range(len(id)):
     {'address':address[number],'bikes' : bikes[number],'id' : id[number],'lat' : lat[number],'lon' : lon[number],'name' : name[number],'slots' : slots[number],'stationType' : stationType[number],'status' : status[number]})
     conn.commit()
 
+
+htmldata = open("template.html")
+pagedata = ""
+for line in htmldata:
+    if "changeme" in line:
+        rows = ""
+        content = ""
+        list = ""
+        for row in c.execute("SELECT * FROM velo"):
+            content += "<li>"+"<p>"+str(row)+"</p>"+"</li>"
+        list += "<ul>" + content + "</ul>"
+        pagedata += rows + list
+    else:
+        pagedata += line
+htmldata.close()
+output_bestand = open("site.html", "w")
+output_bestand.write(pagedata)
+output_bestand.close()
+
 conn.commit()
 conn.close()
