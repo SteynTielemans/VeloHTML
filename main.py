@@ -11,5 +11,8 @@ class data():
         data_json = json.loads(response.read())
         with open("data.json","w") as f:
             json.dump(data_json,f)
+    def printdata():
+        with open("data.json","r") as f:
+            print(f)
 
-data.getdata()
+data.printdata
