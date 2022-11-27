@@ -43,6 +43,7 @@ for number in range(len(id)):
     {'address':address[number],'bikes' : bikes[number],'id' : id[number],'lat' : lat[number],'lon' : lon[number],'name' : name[number],'slots' : slots[number],'stationType' : stationType[number],'status' : status[number]})
     conn.commit()
 
+print(address[1])
 conn.commit()
 
 conn.close()

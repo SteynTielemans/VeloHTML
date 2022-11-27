@@ -16,4 +16,5 @@ class data():
             print(f.read())
     def opendata(self):
         with open("data.json","r",encoding = ENCODING) as f:
-            return f.read()
+            file = json.loads(f.read())
+            return file
