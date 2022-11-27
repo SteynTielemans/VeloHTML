@@ -13,6 +13,6 @@ class data():
             json.dump(data_json,f)
     def printdata(self):
         with open("data.json","r",encoding = ENCODING) as f:
-            print(f)
+            print(f.read())
 
 data().printdata()
