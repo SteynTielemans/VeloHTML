@@ -14,6 +14,7 @@ slots =[]
 stationType = []
 status =[]
 
+print("if velo.db exists, delete before running")
 
 c.execute("""CREATE TABLE IF NOT EXISTS velo (
             adress text,
@@ -57,7 +58,7 @@ for line in htmldata:
         rows = ""
         content = ""
         list = ""
-        for row in c.execute("SELECT * FROM velo"):
+        for row in c.execute("SELECT * FROM velo ORDER BY bikes DESC"):
             content += "<li>"+"<p>"+str(row)+"</p>"+"</li>"
         list += "<ul>" + content + "</ul>"
         pagedata += rows + list
