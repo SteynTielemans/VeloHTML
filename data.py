@@ -18,3 +18,5 @@ class data():
         with open("data.json","r",encoding = ENCODING) as f:
             file = json.loads(f.read())
             return file
+    def update(self):
+        pass

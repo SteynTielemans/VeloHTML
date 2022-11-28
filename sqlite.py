@@ -14,10 +14,6 @@ slots =[]
 stationType = []
 status =[]
 
-print("if velo.db exists, delete before running")
-print("if velo.db exists, delete before running")
-print("if velo.db exists, delete before running")
-
 c.execute("""CREATE TABLE IF NOT EXISTS velo (
             adress text,
             bikes integer,
